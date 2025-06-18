@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming react-router-dom for navigation
 import { Button } from '@/components/ui/button';
-import { Plane, Briefcase, LogIn } from 'lucide-react'; // Example icons
+import { LayoutDashboard, Plane, Briefcase, LogIn } from 'lucide-react'; // Added LayoutDashboard
 
 const NavigationMenu: React.FC = () => {
   console.log("Rendering NavigationMenu");
 
-  // Placeholder navigation items
+  // Updated navigation items
   const navItems = [
-    { href: '/', label: 'Search Flights', icon: <Plane className="mr-2 h-4 w-4" /> },
+    { href: '/', label: 'Dashboard', icon: <LayoutDashboard className="mr-2 h-4 w-4" /> },
+    { href: '/', label: 'Book Flight', icon: <Plane className="mr-2 h-4 w-4" /> }, // Assuming flight search is on dashboard/homepage
     { href: '/my-trips', label: 'My Trips', icon: <Briefcase className="mr-2 h-4 w-4" /> },
   ];
 
@@ -16,8 +17,8 @@ const NavigationMenu: React.FC = () => {
     <header className="bg-background border-b sticky top-0 z-50 shadow-sm">
       <nav className="container mx-auto px-4 lg:px-6 py-3 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-primary flex items-center">
-          <Plane className="h-7 w-7 mr-2 text-blue-600" />
-          FlightBooker
+          <LayoutDashboard className="h-7 w-7 mr-2 text-primary" /> {/* Changed Icon and color */}
+          Flight Dashboard {/* Changed Name */}
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
           {navItems.map((item) => (
